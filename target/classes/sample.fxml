@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.program.javafx.Controller.Controller">
+   <children>
+      <TableView fx:id="tvDeveloper" layoutX="357.0" layoutY="14.0" prefHeight="421.0" prefWidth="482.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="46.0" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="104.0" text="Name" />
+            <TableColumn fx:id="colSpecialty" prefWidth="106.0" text="Specialty" />
+            <TableColumn fx:id="colSalary" prefWidth="96.0" text="Salary" />
+            <TableColumn fx:id="colPhone" prefWidth="129.0" text="Phone" />
+        </columns>
+      </TableView>
+      <VBox layoutX="36.0" layoutY="62.0" prefHeight="184.0" prefWidth="71.0" spacing="18.0">
+         <children>
+            <Label text="ID" />
+            <Label text="Name" />
+            <Label text="Specialty" />
+            <Label text="Salary" />
+            <Label prefHeight="18.0" prefWidth="47.0" text="Phone" />
+         </children>
+      </VBox>
+      <VBox layoutX="107.0" layoutY="62.0" prefHeight="184.0" prefWidth="172.0" spacing="8.0">
+         <children>
+             <TextField fx:id="tfId" />
+             <TextField fx:id="tfTitle" />
+             <TextField fx:id="tfAuthor" />
+             <TextField fx:id="tfYear" />
+             <TextField fx:id="tfPages" />
+         </children>
+      </VBox>
+      <Button fx:id="btnInsert" layoutX="60.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="212.0" text="Insert" />
+      <Button fx:id="btnUpdate" layoutX="60.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="212.0" text="Update" />
+      <Button fx:id="btnDelete" layoutX="60.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="212.0" text="Delete" />
+      <Button fx:id="btnCleareField" layoutX="202.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="124.0" text="Cleare Field" />
+   </children>
+</AnchorPane>
