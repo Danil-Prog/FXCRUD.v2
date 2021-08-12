@@ -1,13 +1,21 @@
 package com.program.javafx.Controller;
 
+import com.program.javafx.DatabaseConnection.DataBaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class Controller {
+import java.net.URI;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Controller implements Initializable {
+
+    DataBaseConnection connection;
 
     @FXML
     private TableView<?> tvDeveloper;
@@ -17,6 +25,26 @@ public class Controller {
 
     @FXML
     private TableColumn<?, ?> colName;
+
+    public TableColumn<?, ?> getColId() {
+        return colId;
+    }
+
+    public TableColumn<?, ?> getColName() {
+        return colName;
+    }
+
+    public TableColumn<?, ?> getColSpecialty() {
+        return colSpecialty;
+    }
+
+    public TableColumn<?, ?> getColSalary() {
+        return colSalary;
+    }
+
+    public TableColumn<?, ?> getColPhone() {
+        return colPhone;
+    }
 
     @FXML
     private TableColumn<?, ?> colSpecialty;
@@ -56,6 +84,11 @@ public class Controller {
 
     @FXML
     void handleButtonAction(ActionEvent event) {
+
+    }
+
+    public void initialize(URL location, ResourceBundle resource){
+
 
     }
 

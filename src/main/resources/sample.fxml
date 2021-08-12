@@ -26,10 +26,10 @@
       <VBox layoutX="107.0" layoutY="62.0" prefHeight="184.0" prefWidth="172.0" spacing="8.0">
          <children>
              <TextField fx:id="tfId" />
-             <TextField fx:id="tfTitle" />
-             <TextField fx:id="tfAuthor" />
-             <TextField fx:id="tfYear" />
-             <TextField fx:id="tfPages" />
+             <TextField fx:id="tfName" />
+             <TextField fx:id="tfSpecialty" />
+             <TextField fx:id="tfSalary" />
+             <TextField fx:id="tfPhone" />
          </children>
       </VBox>
       <Button fx:id="btnInsert" layoutX="60.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="212.0" text="Insert" />

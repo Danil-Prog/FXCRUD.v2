@@ -19,10 +19,11 @@ public class DataBaseConnection {
         try {
             conn = DriverManager.getConnection(url, login, password);
             System.out.println("Connect complete!");
+            return conn;
         }catch (Exception ex){
             ex.printStackTrace();
         }
-        return conn;
+            return null;
     }
 
     private Properties loadProperties(){
