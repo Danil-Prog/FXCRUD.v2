@@ -1,6 +1,8 @@
 package com.program.javafx.Controller;
 
 import com.program.javafx.DatabaseConnection.DataBaseConnection;
+import com.program.javafx.Model.DAO.DeveloperDAO;
+import com.program.javafx.Model.Entities.Developer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,44 +18,49 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     DataBaseConnection connection;
+    DeveloperDAO developerDAO = new DeveloperDAO();
 
     @FXML
-    private TableView<?> tvDeveloper;
+    private TableView<Developer> tvDeveloper;
 
-    @FXML
-    private TableColumn<?, ?> colId;
-
-    @FXML
-    private TableColumn<?, ?> colName;
-
-    public TableColumn<?, ?> getColId() {
-        return colId;
-    }
-
-    public TableColumn<?, ?> getColName() {
-        return colName;
-    }
-
-    public TableColumn<?, ?> getColSpecialty() {
-        return colSpecialty;
-    }
-
-    public TableColumn<?, ?> getColSalary() {
-        return colSalary;
-    }
-
-    public TableColumn<?, ?> getColPhone() {
-        return colPhone;
+    public TableView<Developer> getTvDeveloper() {
+        return tvDeveloper;
     }
 
     @FXML
-    private TableColumn<?, ?> colSpecialty;
+    private TableColumn<Developer, Integer> colId;
 
     @FXML
-    private TableColumn<?, ?> colSalary;
+    private TableColumn<Developer, String> colName;
 
     @FXML
-    private TableColumn<?, ?> colPhone;
+    private TableColumn<Developer, String> colSpecialty;
+
+    @FXML
+    private TableColumn<Developer, Integer> colSalary;
+
+    @FXML
+    private TableColumn<Developer, Integer> colPhone;
+
+        public TableColumn<Developer, Integer> getColId() {
+            return colId;
+        }
+
+        public TableColumn<Developer, String> getColName() {
+            return colName;
+        }
+
+        public TableColumn<Developer, String> getColSpecialty() {
+            return colSpecialty;
+        }
+
+        public TableColumn<Developer, Integer> getColSalary() {
+            return colSalary;
+        }
+
+        public TableColumn<Developer, Integer> getColPhone() {
+            return colPhone;
+        }
 
     @FXML
     private TextField tfId;
@@ -80,7 +87,7 @@ public class Controller implements Initializable {
     private Button btnDelete;
 
     @FXML
-    private Button btnCleareField;
+    private Button btnClearField;
 
     @FXML
     void handleButtonAction(ActionEvent event) {
@@ -88,7 +95,7 @@ public class Controller implements Initializable {
     }
 
     public void initialize(URL location, ResourceBundle resource){
-
+        developerDAO.showDeveloper();
 
     }
 

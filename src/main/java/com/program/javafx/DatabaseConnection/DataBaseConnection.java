@@ -21,7 +21,7 @@ public class DataBaseConnection {
             System.out.println("Connect complete!");
             return conn;
         }catch (Exception ex){
-            ex.printStackTrace();
+            System.out.println("Всё печально((");
         }
             return null;
     }

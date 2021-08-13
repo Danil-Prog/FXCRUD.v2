@@ -9,9 +9,9 @@
         <columns>
           <TableColumn fx:id="colId" prefWidth="46.0" text="ID" />
           <TableColumn fx:id="colName" prefWidth="104.0" text="Name" />
-            <TableColumn fx:id="colSpecialty" prefWidth="106.0" text="Specialty" />
-            <TableColumn fx:id="colSalary" prefWidth="96.0" text="Salary" />
-            <TableColumn fx:id="colPhone" prefWidth="129.0" text="Phone" />
+          <TableColumn fx:id="colSpecialty" prefWidth="106.0" text="Specialty" />
+          <TableColumn fx:id="colSalary" prefWidth="96.0" text="Salary" />
+          <TableColumn fx:id="colPhone" prefWidth="129.0" text="Phone" />
         </columns>
       </TableView>
       <VBox layoutX="36.0" layoutY="62.0" prefHeight="184.0" prefWidth="71.0" spacing="18.0">
@@ -35,6 +35,6 @@
       <Button fx:id="btnInsert" layoutX="60.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="212.0" text="Insert" />
       <Button fx:id="btnUpdate" layoutX="60.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="212.0" text="Update" />
       <Button fx:id="btnDelete" layoutX="60.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="212.0" text="Delete" />
-      <Button fx:id="btnCleareField" layoutX="202.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="124.0" text="Cleare Field" />
+      <Button fx:id="btnClearField" layoutX="202.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="124.0" text="Clear Field" />
    </children>
 </AnchorPane>
