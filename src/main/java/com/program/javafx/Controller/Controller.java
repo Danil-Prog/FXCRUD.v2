@@ -18,7 +18,6 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     DataBaseConnection connection;
-    DeveloperDAO developerDAO = new DeveloperDAO();
 
     @FXML
     private TableView<Developer> tvDeveloper;
@@ -95,7 +94,7 @@ public class Controller implements Initializable {
     }
 
     public void initialize(URL location, ResourceBundle resource){
-        developerDAO.showDeveloper();
+        new DeveloperDAO().showDeveloper();
 
     }
 

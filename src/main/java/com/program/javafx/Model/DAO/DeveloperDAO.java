@@ -11,8 +11,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class DeveloperDAO {
-    private DataBaseConnection connection = new DataBaseConnection();
-    private Controller controller;
+    public DataBaseConnection connection = new DataBaseConnection();
+    public Controller controller = new Controller();
 
     public ObservableList<Developer> getDeveloperList(){
         ObservableList<Developer> developerList = FXCollections.observableArrayList();
