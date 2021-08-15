@@ -7,22 +7,23 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class DeveloperDAO {
     public DataBaseConnection connection = new DataBaseConnection();
-    public Controller controller = new Controller();
+    public static Controller controller = new Controller();
 
     public ObservableList<Developer> getDeveloperList(){
         ObservableList<Developer> developerList = FXCollections.observableArrayList();
-        connection.getConnection();
+        Connection conn = connection.getConnection();
         String query = "SELECT * FROM developers";
         Statement st;
         ResultSet rs;
 
         try {
-            st = connection.getConnection().createStatement();
+            st = conn.createStatement();
             rs = st.executeQuery(query);
             Developer developer;
             while (rs.next()){
@@ -36,6 +37,7 @@ public class DeveloperDAO {
             }
         }catch (Exception ex){
             ex.printStackTrace();
+            System.out.println("Error 'Select from developers'");
         }
         return developerList;
     }
@@ -65,10 +67,10 @@ public class DeveloperDAO {
     }
 
     private void executeQuery(String query){
-        connection.getConnection();
+        Connection conn = connection.getConnection();
         Statement st;
         try {
-            st = connection.getConnection().createStatement();
+            st = conn.createStatement();
             st.executeUpdate(query);
         }catch (Exception ex){
             ex.printStackTrace();

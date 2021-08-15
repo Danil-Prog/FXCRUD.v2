@@ -30,8 +30,10 @@ public class DataBaseConnection {
         try (FileInputStream fs = new FileInputStream("DriverManager.properties")){
             properties = new Properties();
             properties.load(fs);
+            System.out.println("Properties загружен!");
         }catch (IOException e){
             e.printStackTrace();
+            System.out.println("Ошибка файла Properties!");
         }
         return properties;
     }

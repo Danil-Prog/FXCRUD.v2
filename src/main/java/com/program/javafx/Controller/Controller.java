@@ -16,8 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-
-    DataBaseConnection connection;
+    private static DeveloperDAO developerDAO = new DeveloperDAO();
 
     @FXML
     private TableView<Developer> tvDeveloper;
@@ -40,23 +39,23 @@ public class Controller implements Initializable {
 
     @FXML
     private TableColumn<Developer, Integer> colPhone;
-
+        @FXML
         public TableColumn<Developer, Integer> getColId() {
             return colId;
         }
-
+        @FXML
         public TableColumn<Developer, String> getColName() {
             return colName;
         }
-
+        @FXML
         public TableColumn<Developer, String> getColSpecialty() {
             return colSpecialty;
         }
-
+        @FXML
         public TableColumn<Developer, Integer> getColSalary() {
             return colSalary;
         }
-
+        @FXML
         public TableColumn<Developer, Integer> getColPhone() {
             return colPhone;
         }
@@ -65,16 +64,16 @@ public class Controller implements Initializable {
     private TextField tfId;
 
     @FXML
-    private TextField tfTitle;
+    private TextField tfName;
 
     @FXML
-    private TextField tfAuthor;
+    private TextField tfSpecialty;
 
     @FXML
-    private TextField tfYear;
+    private TextField tfSalary;
 
     @FXML
-    private TextField tfPages;
+    private TextField tfPhone;
 
     @FXML
     private Button btnInsert;
@@ -92,9 +91,9 @@ public class Controller implements Initializable {
     void handleButtonAction(ActionEvent event) {
 
     }
-
+    @Override
     public void initialize(URL location, ResourceBundle resource){
-        new DeveloperDAO().showDeveloper();
+        developerDAO.showDeveloper();
 
     }
 
