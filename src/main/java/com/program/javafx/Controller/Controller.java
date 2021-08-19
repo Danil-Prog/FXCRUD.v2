@@ -1,6 +1,5 @@
 package com.program.javafx.Controller;
 
-import com.program.javafx.DatabaseConnection.DataBaseConnection;
 import com.program.javafx.Model.DAO.DeveloperDAO;
 import com.program.javafx.Model.Entities.Developer;
 import javafx.event.ActionEvent;
@@ -11,7 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-import java.net.URI;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -104,6 +103,7 @@ public class Controller implements Initializable {
             return tfPhone;
         }
 
+    //кнопки(добавить, обновить, удалить, очиститьПоле)
     @FXML
     private Button btnInsert;
 
@@ -127,6 +127,7 @@ public class Controller implements Initializable {
         }
 
     }
+    //этот метод отображает данные в таблицу
     @Override
     public void initialize(URL location, ResourceBundle resource){
         developerDAO.showDeveloper();

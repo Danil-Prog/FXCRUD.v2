@@ -9,7 +9,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 //Класс управления базой данных
@@ -98,6 +97,7 @@ public class DeveloperDAO {
         executeQuery(query);
         showDeveloper();
     }
+
 
     private void executeQuery(String query){
         Connection conn = connection.getConnection();

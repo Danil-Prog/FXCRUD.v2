@@ -1,6 +1,5 @@
 package com.program.javafx.Application;
 
-import com.program.javafx.DatabaseConnection.DataBaseConnection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
