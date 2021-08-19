@@ -9,12 +9,20 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
+//Класс управления базой данных
 public class DeveloperDAO {
-    public DataBaseConnection connection = new DataBaseConnection();
-    public static Controller controller = new Controller();
 
+    private Controller controller;
+
+    public DeveloperDAO(Controller controller){
+        this.controller = controller;
+    }
+    public DataBaseConnection connection = new DataBaseConnection();
+
+    //добавления записей из таблицы в список
     public ObservableList<Developer> getDeveloperList(){
         ObservableList<Developer> developerList = FXCollections.observableArrayList();
         Connection conn = connection.getConnection();
@@ -42,6 +50,7 @@ public class DeveloperDAO {
         return developerList;
     }
 
+    //отобразить данные таблицы
     public void showDeveloper(){
         ObservableList<Developer> list = getDeveloperList();
 
@@ -54,14 +63,38 @@ public class DeveloperDAO {
         controller.getTvDeveloper().setItems(list);
     }
 
+    //вставить запись в таблицу и отобразить данные
     public void insertRecord(){
+        try {
+            String query = "INSERT INTO developers VALUES (" +
+                    controller.getTfId().getText() + ",'" +
+                    controller.getTfName().getText() + "','" +
+                    controller.getTfSpecialty().getText() + "'," +
+                    controller.getTfSalary().getText() + "," +
+                    controller.getTfPhone().getText() + ")";
+            executeQuery(query);
+            System.out.println("Запись успешно добавлена!");
+            showDeveloper();
+        }catch (Exception ex){
+            System.out.println("Синтаксическая ошибка SQL запроса " + ex);
+        }
+    }
 
-        String query = "INSERT INTO developers VALUES (" +
-                controller.getColId().getText() + ",'" +
-                controller.getColName().getText() + ",'" +
-                controller.getColSpecialty().getText() + ",'" +
-                controller.getColSalary().getText() + "," +
-                controller.getColPhone().getText() + ")";
+    //удалить запись
+    public void deleteRecord(){
+        String query = "DELETE FROM developers WHERE id = " + controller.getTfId().getText() + "";
+        executeQuery(query);
+        showDeveloper();
+    }
+
+    //обновить запись
+    public void updateRecord(){
+        String query = "UPDATE developers SET name = '" +
+                controller.getTfName().getText() + "', specialty = '" +
+                controller.getTfSpecialty().getText() + "', salary = " +
+                controller.getTfSalary().getText() + ", phone = " +
+                controller.getTfPhone().getText() +
+                " WHERE id = " + controller.getTfId().getText() + "";
         executeQuery(query);
         showDeveloper();
     }

@@ -16,8 +16,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-    private static DeveloperDAO developerDAO = new DeveloperDAO();
 
+    private DeveloperDAO developerDAO;
+
+    public Controller(){
+        this.developerDAO = new DeveloperDAO(this);
+    }
+
+    //tv - table view (таблица с колонками)
     @FXML
     private TableView<Developer> tvDeveloper;
 
@@ -25,6 +31,8 @@ public class Controller implements Initializable {
         return tvDeveloper;
     }
 
+
+    //колонки из таблицы (colId, colName, colSpecialty, colSalary, colPhone)
     @FXML
     private TableColumn<Developer, Integer> colId;
 
@@ -39,6 +47,7 @@ public class Controller implements Initializable {
 
     @FXML
     private TableColumn<Developer, Integer> colPhone;
+
         @FXML
         public TableColumn<Developer, Integer> getColId() {
             return colId;
@@ -75,6 +84,26 @@ public class Controller implements Initializable {
     @FXML
     private TextField tfPhone;
 
+        public TextField getTfId() {
+            return tfId;
+        }
+
+        public TextField getTfName() {
+            return tfName;
+        }
+
+        public TextField getTfSpecialty() {
+            return tfSpecialty;
+        }
+
+        public TextField getTfSalary() {
+            return tfSalary;
+        }
+
+        public TextField getTfPhone() {
+            return tfPhone;
+        }
+
     @FXML
     private Button btnInsert;
 
@@ -89,6 +118,13 @@ public class Controller implements Initializable {
 
     @FXML
     void handleButtonAction(ActionEvent event) {
+        if (event.getSource() == btnInsert){
+            developerDAO.insertRecord();
+        }else if (event.getSource() == btnDelete){
+            developerDAO.deleteRecord();
+        }else if (event.getSource() == btnUpdate){
+            developerDAO.updateRecord();
+        }
 
     }
     @Override
